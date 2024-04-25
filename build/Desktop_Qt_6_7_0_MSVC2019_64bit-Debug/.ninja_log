@@ -1,0 +1,23 @@
+# ninja log v5
+468	3039	7357487412848864	CMakeFiles/countfrequency.dir/main.cpp.obj	a6eeee76b784ffb7
+29	192	7357493049969332	countfrequency_autogen/timestamp	89ccb02d2827c495
+29	192	7357493049969332	C:/Users/georg/OneDrive/Documents/countfrequency/build/Desktop_Qt_6_7_0_MSVC2019_64bit-Debug/countfrequency_autogen/mocs_compilation.cpp	89ccb02d2827c495
+203	3331	7357493081898536	CMakeFiles/countfrequency.dir/mainwindow.cpp.obj	719a37ec56611cba
+29	192	7357493049969332	countfrequency_autogen/mocs_compilation.cpp	89ccb02d2827c495
+29	192	7357493049969332	C:/Users/georg/OneDrive/Documents/countfrequency/build/Desktop_Qt_6_7_0_MSVC2019_64bit-Debug/countfrequency_autogen/timestamp	89ccb02d2827c495
+2621	3074	7357480011583041	countfrequency.exe	d679324b8eb49427
+192	3320	7357493081741993	CMakeFiles/countfrequency.dir/countfrequency_autogen/mocs_compilation.cpp.obj	38f693f10fcfa7ed
+601	2467	7357478745781114	CMakeFiles/countfrequency.dir/wordfrequancy.cpp.obj	bb891faabf186aac
+25	881	7357493412279207	build.ninja	a273f8096ab04bc5
+78	223	7357493417138512	countfrequency_autogen/timestamp	89ccb02d2827c495
+78	223	7357493417138512	countfrequency_autogen/mocs_compilation.cpp	89ccb02d2827c495
+78	223	7357493417138512	C:/Users/georg/OneDrive/Documents/countfrequency/build/Desktop_Qt_6_7_0_MSVC2019_64bit-Debug/countfrequency_autogen/timestamp	89ccb02d2827c495
+78	223	7357493417138512	C:/Users/georg/OneDrive/Documents/countfrequency/build/Desktop_Qt_6_7_0_MSVC2019_64bit-Debug/countfrequency_autogen/mocs_compilation.cpp	89ccb02d2827c495
+235	2555	7357493440378768	CMakeFiles/countfrequency.dir/mainwindow.cpp.obj	719a37ec56611cba
+52	200	7357493531173173	countfrequency_autogen/timestamp	89ccb02d2827c495
+52	200	7357493531173173	countfrequency_autogen/mocs_compilation.cpp	89ccb02d2827c495
+52	200	7357493531173173	C:/Users/georg/OneDrive/Documents/countfrequency/build/Desktop_Qt_6_7_0_MSVC2019_64bit-Debug/countfrequency_autogen/timestamp	89ccb02d2827c495
+52	200	7357493531173173	C:/Users/georg/OneDrive/Documents/countfrequency/build/Desktop_Qt_6_7_0_MSVC2019_64bit-Debug/countfrequency_autogen/mocs_compilation.cpp	89ccb02d2827c495
+210	2649	7357493555685516	CMakeFiles/countfrequency.dir/main.cpp.obj	a6eeee76b784ffb7
+216	2653	7357493555685516	CMakeFiles/countfrequency.dir/mainwindow.cpp.obj	719a37ec56611cba
+2654	2906	7357493557728484	countfrequency.exe	d679324b8eb49427
