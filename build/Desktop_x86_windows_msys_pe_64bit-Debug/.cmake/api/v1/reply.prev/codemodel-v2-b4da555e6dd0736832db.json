@@ -1,0 +1,79 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-b177802cf33cf764dc86.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "countfrequency",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "countfrequency::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-countfrequency-Debug-a2d679056ddf263972cc.json",
+					"name" : "countfrequency",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "countfrequency_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-countfrequency_autogen-Debug-4bc93c2df542fce6ab32.json",
+					"name" : "countfrequency_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "countfrequency_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-countfrequency_autogen_timestamp_deps-Debug-ed997fb0884d04167d99.json",
+					"name" : "countfrequency_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/Georgehany/Downloads/countfrequency/build/Desktop_x86_windows_msys_pe_64bit-Debug",
+		"source" : "C:/Users/Georgehany/Downloads/countfrequency"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

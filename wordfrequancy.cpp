@@ -9,6 +9,7 @@
 using namespace std;
 WordFrequancy::WordFrequancy(string paragraph) {
     this->paragraph = paragraph;
+
 }
 // void WordFrequancy::workFlow(string paragraph) {
 //     int choice;
