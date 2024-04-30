@@ -1,0 +1,13 @@
+# ninja log v5
+26	513	7361992785750699	countfrequency_autogen/timestamp	4262575c15ade8fb
+26	513	7361992785750699	countfrequency_autogen/mocs_compilation.cpp	4262575c15ade8fb
+26	513	7361992785750699	C:/Users/alima/Documents/countfrequency/build/Desktop_Qt_6_8_0_MSVC2019_64bit-Debug/countfrequency_autogen/timestamp	4262575c15ade8fb
+26	513	7361992785750699	C:/Users/alima/Documents/countfrequency/build/Desktop_Qt_6_8_0_MSVC2019_64bit-Debug/countfrequency_autogen/mocs_compilation.cpp	4262575c15ade8fb
+529	2601	7361992807112899	CMakeFiles/countfrequency.dir/wordfrequancy.cpp.obj	609b7bf58a992be6
+521	3554	7361992816658759	CMakeFiles/countfrequency.dir/main.cpp.obj	f35445733042fb90
+515	3596	7361992817082169	CMakeFiles/countfrequency.dir/countfrequency_autogen/mocs_compilation.cpp.obj	225d7113f18767ac
+533	3679	7361992817902395	CMakeFiles/countfrequency.dir/finalmenu.cpp.obj	cbe38df002c48698
+525	3732	7361992818432504	CMakeFiles/countfrequency.dir/mainwindow.cpp.obj	19bf2f3ec6a3ae3d
+584	3871	7361992819826049	CMakeFiles/countfrequency.dir/displaymenu.cpp.obj	def33f37dd30f753
+580	4093	7361992822059796	CMakeFiles/countfrequency.dir/firstmenu.cpp.obj	ed0426634bb9eb38
+4094	4530	7361992826320123	countfrequency.exe	59be4f2fc51845b8

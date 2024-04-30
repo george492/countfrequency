@@ -1,9 +1,9 @@
 #include "mainwindow.h"
+#include <QString>
+#include <QTextEdit>
 #include "./ui_mainwindow.h"
 #include "finalmenu.h"
-#include <QString>
 #include <string>
-#include <QTextEdit>
 // main.cpp
 extern std::string globalString; // Declare the global string variable
 MainWindow::MainWindow(QWidget *parent)
@@ -35,6 +35,4 @@ void MainWindow::on_pushButton_clicked()
     //emit updatetext();
     this->hide();
     t->show();
-
 }
-

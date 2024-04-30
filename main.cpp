@@ -1,10 +1,11 @@
 // main.cpp
-#include "firstmenu.h"
 #include <QApplication>
+#include "firstmenu.h"
 #include <string>
-std::string globalString ;
+std::string globalString;
 using namespace std;
-int main(int argc, char *argv[]) {
+int main(int argc, char *argv[])
+{
     QApplication a(argc, argv);
 
     firstmenu mainWindow;

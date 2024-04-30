@@ -1,15 +1,15 @@
 #include "WordFrequancy.h"
-#include <iostream>
 #include <algorithm>
-#include <vector>
-#include <string>
+#include <iostream>
 #include <queue>
 #include <stack>
+#include <string>
 #include <unordered_map>
+#include <vector>
 using namespace std;
-WordFrequancy::WordFrequancy(string paragraph) {
+WordFrequancy::WordFrequancy(string paragraph)
+{
     this->paragraph = paragraph;
-
 }
 // void WordFrequancy::workFlow(string paragraph) {
 //     int choice;
@@ -29,7 +29,6 @@ WordFrequancy::WordFrequancy(string paragraph) {
 
 //         }
 //         if (choice == 3) {
-
 
 //             stack <pair<string, int>> sortedStack;
 //             sortedStack = countFrequencySorted(paragraph);
@@ -55,7 +54,8 @@ WordFrequancy::WordFrequancy(string paragraph) {
 
 //     // Printing word frequencies
 // }
-bool sortByFrequencyAndSize(const pair<string, int> a, const pair<string, int> b) {
+bool sortByFrequencyAndSize(const pair<string, int> a, const pair<string, int> b)
+{
     if (a.second != b.second) {
         return a.second < b.second; // Sort by frequency in descending order
     }
@@ -65,7 +65,6 @@ bool sortByFrequencyAndSize(const pair<string, int> a, const pair<string, int> b
     // If frequencies are equal, compare the words lexicographically
     return a.first > b.first;
 }
-
 
 // void WordFrequancy::edit(string wordToEdit, string editedWord, string& paragraph) {
 //     wordToEdit = to_lower(wordToEdit);
@@ -82,10 +81,8 @@ bool sortByFrequencyAndSize(const pair<string, int> a, const pair<string, int> b
 //     }
 // }
 
-
-unordered_map<string, int> WordFrequancy::count(string paragraph) {
-
-
+unordered_map<string, int> WordFrequancy::count(string paragraph)
+{
     string singleWord;
     unordered_map<string, int> wordWithFrequancy;
     for (int i = 0; i < paragraph.size(); i++) {
@@ -97,9 +94,8 @@ unordered_map<string, int> WordFrequancy::count(string paragraph) {
             auto it = wordWithFrequancy.find(singleWord);
             if (it != wordWithFrequancy.end()) {
                 wordWithFrequancy[singleWord]++;
-            }
-            else {
-                wordWithFrequancy.insert({ singleWord,1 });
+            } else {
+                wordWithFrequancy.insert({singleWord, 1});
             }
             singleWord = "";
         }
@@ -114,22 +110,22 @@ unordered_map<string, int> WordFrequancy::count(string paragraph) {
         auto it = wordWithFrequancy.find(singleWord);
         if (it != wordWithFrequancy.end()) {
             wordWithFrequancy[singleWord]++;
-        }
-        else {
-            wordWithFrequancy.insert({ singleWord,1 });
+        } else {
+            wordWithFrequancy.insert({singleWord, 1});
         }
         singleWord = "";
     }
     return wordWithFrequancy;
-
 }
-string  WordFrequancy::to_lower(string s) {
+string WordFrequancy::to_lower(string s)
+{
     for (int i = 0; i < s.length(); ++i) {
         s[i] = tolower(s[i]);
     }
     return s;
 }
-stack<pair<string, int>> WordFrequancy::countFrequencySorted(string paragraph) {
+stack<pair<string, int>> WordFrequancy::countFrequencySorted(string paragraph)
+{
     unordered_map<string, int> freqMap = count(paragraph);
 
     // Convert the frequency map to a vector of pairs
@@ -141,10 +137,28 @@ stack<pair<string, int>> WordFrequancy::countFrequencySorted(string paragraph) {
     // Push sorted pairs into a stack
     stack<pair<string, int>> sortedWords;
     vector<pair<string, int>>::iterator it = wordFreqs.begin();
-    while (it != wordFreqs.end())
-    {
-        sortedWords.push({ it->first,it->second });
+    while (it != wordFreqs.end()) {
+        sortedWords.push({it->first, it->second});
         it++;
     }
     return sortedWords;
 }
+
+//display Word's frequancy
+
+void WordFrequancy::displayFrequancy(string paragraph)
+{
+
+    unordered_map<string, int> displayMap = count(paragraph);
+
+}
+
+//display sorted word's frequancy
+
+void WordFrequancy::displaySortedFrequancy(string paragraph)
+{
+
+    stack<pair<string, int>> displaySortedMap = countFrequencySorted(paragraph);
+
+}
+

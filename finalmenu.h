@@ -2,7 +2,7 @@
 #define FINALMENU_H
 
 #include <QMainWindow>
-
+#include "displaymenu.h"
 
 namespace Ui {
 class finalmenu;
@@ -15,9 +15,14 @@ public:
     explicit finalmenu(QWidget *parent = nullptr);
     ~finalmenu();
     void updatetext();
+
+private slots:
+    void openDisplaymenu();
+
 private:
     Ui::finalmenu *ui;
-      void on_pushButton_clicked();
+    void on_pushButton_clicked();
+    displaymenu *displayMenu;
 };
 
 #endif // FINALMENU_H
