@@ -4,8 +4,8 @@
 #include "./ui_mainwindow.h"
 #include "finalmenu.h"
 #include <string>
+extern std::string globalString;
 // main.cpp
-extern std::string globalString; // Declare the global string variable
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)

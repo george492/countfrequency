@@ -1,4 +1,5 @@
 countfrequency_autogen/timestamp: \
+  C:/Qt/6.7.0/msvc2019_64/include/QtCore/QString \
   C:/Qt/6.7.0/msvc2019_64/include/QtCore/q20functional.h \
   C:/Qt/6.7.0/msvc2019_64/include/QtCore/q20memory.h \
   C:/Qt/6.7.0/msvc2019_64/include/QtCore/q20type_traits.h \
@@ -337,6 +338,15 @@ countfrequency_autogen/timestamp: \
   CMakeFiles/3.27.7/CMakeCXXCompiler.cmake \
   CMakeFiles/3.27.7/CMakeRCCompiler.cmake \
   CMakeFiles/3.27.7/CMakeSystem.cmake \
+  C:/Users/georg/OneDrive/Documents/countfrequency/displaymenu.cpp \
+  C:/Users/georg/OneDrive/Documents/countfrequency/displaymenu.h \
+  C:/Users/georg/OneDrive/Documents/countfrequency/displaymenu.ui \
+  C:/Users/georg/OneDrive/Documents/countfrequency/finalmenu.cpp \
+  C:/Users/georg/OneDrive/Documents/countfrequency/finalmenu.h \
+  C:/Users/georg/OneDrive/Documents/countfrequency/finalmenu.ui \
+  C:/Users/georg/OneDrive/Documents/countfrequency/firstmenu.cpp \
+  C:/Users/georg/OneDrive/Documents/countfrequency/firstmenu.h \
+  C:/Users/georg/OneDrive/Documents/countfrequency/firstmenu.ui \
   C:/Users/georg/OneDrive/Documents/countfrequency/main.cpp \
   C:/Users/georg/OneDrive/Documents/countfrequency/mainwindow.cpp \
   C:/Users/georg/OneDrive/Documents/countfrequency/mainwindow.h \

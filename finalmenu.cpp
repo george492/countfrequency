@@ -1,7 +1,10 @@
 #include "finalmenu.h"
 #include "mainwindow.h"
+#include "displaymenu.h"
 #include "ui_finalmenu.h"
+#include "wordfrequancy.h"
 extern std::string globalString;
+
 finalmenu::finalmenu(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::finalmenu)
@@ -10,9 +13,9 @@ finalmenu::finalmenu(QWidget *parent)
     ui->setupUi(this);
     connect(ui->pushButton, &QPushButton::clicked, this, &finalmenu::on_pushButton_clicked);
 
-    displayMenu = new displaymenu(this);///
 
-    connect(ui->pushButton_3,&QPushButton::clicked, this, &finalmenu::openDisplaymenu);///
+
+    connect(ui->pushButton_3, &QPushButton::clicked, this, &finalmenu::openDisplaymenu); ///
 }
 
 finalmenu::~finalmenu()
@@ -30,7 +33,12 @@ void finalmenu::updatetext()
     ui->textBrowser->setText(QString::fromStdString(globalString));
 }
 
-void finalmenu::openDisplaymenu()///
-{
+void finalmenu::openDisplaymenu() ///
+{ // one function for display only
+       displayMenu = new displaymenu(this); ///
     displayMenu->show();
+       //wordfrequency s = new wordfrequency(globalString);
+    // s disply normally
+       // t7t display sorted
 }
+// one for display sorted

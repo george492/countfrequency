@@ -148,8 +148,16 @@ stack<pair<string, int>> WordFrequancy::countFrequencySorted(string paragraph)
 
 void WordFrequancy::displayFrequancy(string paragraph)
 {
-
     unordered_map<string, int> displayMap = count(paragraph);
+   // string s3 = it.first + it.second ;
+    //  word  frequency
+//  1- a        3
+//  2- b        5
+    // word    frequency
+    //  a       7
+    // b        2
+    // print (s3)
+   // ui-> byb2a mo5tlf textbrowser->setText(QString::fromStdString(s3)); display menu
 
 }
 
@@ -157,8 +165,5 @@ void WordFrequancy::displayFrequancy(string paragraph)
 
 void WordFrequancy::displaySortedFrequancy(string paragraph)
 {
-
     stack<pair<string, int>> displaySortedMap = countFrequencySorted(paragraph);
-
 }
-

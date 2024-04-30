@@ -2,8 +2,8 @@
 #include <QApplication>
 #include "firstmenu.h"
 #include <string>
-std::string globalString;
 using namespace std;
+ string globalString;
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);

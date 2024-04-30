@@ -270,6 +270,24 @@
 	"HEADERS" : 
 	[
 		[
+			"C:/Users/georg/OneDrive/Documents/countfrequency/displaymenu.h",
+			"MU",
+			"EWIEGA46WW/moc_displaymenu.cpp",
+			null
+		],
+		[
+			"C:/Users/georg/OneDrive/Documents/countfrequency/finalmenu.h",
+			"MU",
+			"EWIEGA46WW/moc_finalmenu.cpp",
+			null
+		],
+		[
+			"C:/Users/georg/OneDrive/Documents/countfrequency/firstmenu.h",
+			"MU",
+			"EWIEGA46WW/moc_firstmenu.cpp",
+			null
+		],
+		[
 			"C:/Users/georg/OneDrive/Documents/countfrequency/mainwindow.h",
 			"MU",
 			"EWIEGA46WW/moc_mainwindow.cpp",
@@ -337,6 +355,21 @@
 	"SETTINGS_FILE" : "C:/Users/georg/OneDrive/Documents/countfrequency/build/Desktop_Qt_6_7_0_MSVC2019_64bit-Debug/CMakeFiles/countfrequency_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
+		[
+			"C:/Users/georg/OneDrive/Documents/countfrequency/displaymenu.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/georg/OneDrive/Documents/countfrequency/finalmenu.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/georg/OneDrive/Documents/countfrequency/firstmenu.cpp",
+			"MU",
+			null
+		],
 		[
 			"C:/Users/georg/OneDrive/Documents/countfrequency/main.cpp",
 			"MU",
