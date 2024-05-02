@@ -16,8 +16,11 @@ public:
     ~finalmenu();
     void updatetext();
 
-private slots:
+
+public slots:
+
     void openDisplaymenu();
+    void openOrderedDisplaymenu();
 
 private:
     Ui::finalmenu *ui;

@@ -1,4 +1,6 @@
 #include "WordFrequancy.h"
+#include "displaymenu.h"
+#include "finalmenu.h"
 #include <algorithm>
 #include <iostream>
 #include <queue>
@@ -146,24 +148,36 @@ stack<pair<string, int>> WordFrequancy::countFrequencySorted(string paragraph)
 
 //display Word's frequancy
 
-void WordFrequancy::displayFrequancy(string paragraph)
+string WordFrequancy::displayFrequancy()
 {
     unordered_map<string, int> displayMap = count(paragraph);
-   // string s3 = it.first + it.second ;
-    //  word  frequency
-//  1- a        3
-//  2- b        5
-    // word    frequency
-    //  a       7
-    // b        2
-    // print (s3)
-   // ui-> byb2a mo5tlf textbrowser->setText(QString::fromStdString(s3)); display menu
+    string unorderedString;
+
+    unorderedString = "Word\t\t\tFrequancy\n\n";
+    for (auto t = displayMap.begin();t != displayMap.end();t++)
+    {
+        unorderedString += t->first + "\n\t\t\t       " + to_string(t->second) + "\n----------------------------------------------------\n\n";
+    }
+    return unorderedString;
 
 }
 
 //display sorted word's frequancy
 
-void WordFrequancy::displaySortedFrequancy(string paragraph)
+string WordFrequancy::displaySortedFrequancy()
 {
-    stack<pair<string, int>> displaySortedMap = countFrequencySorted(paragraph);
+    stack<pair<string, int>> displaySortedStack = countFrequencySorted(paragraph);
+    int size = displaySortedStack.size();
+    pair<string,int> data;
+    string sortedString;
+
+    sortedString = "    Word\t\t\tFrequancy\n\n";
+    for(int i = 1;i<=size;i++)
+    {
+        data = displaySortedStack.top();
+        displaySortedStack.pop();
+
+        sortedString += "(" + to_string(i) + ")_" + data.first + "\n\t\t\t       " + to_string(data.second) + "\n----------------------------------------------------\n\n";
+    }
+    return sortedString;
 }

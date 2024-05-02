@@ -17,7 +17,7 @@ public:
     string to_lower(string paragraph);
     // void workFlow(string paragraph);
 
-    void displayFrequancy(string paragraph);
+    string displayFrequancy();
 
-    void displaySortedFrequancy(string paragraph);
+    string displaySortedFrequancy();
 };

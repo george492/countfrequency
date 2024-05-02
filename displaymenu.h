@@ -2,6 +2,9 @@
 #define DISPLAYMENU_H
 
 #include <QMainWindow>
+#include <iostream>
+using namespace std;
+
 
 namespace Ui {
 class displaymenu;
@@ -14,6 +17,8 @@ class displaymenu : public QMainWindow
 public:
     explicit displaymenu(QWidget *parent = nullptr);
     ~displaymenu();
+    void printText(string);
+
 
 private:
     Ui::displaymenu *ui;

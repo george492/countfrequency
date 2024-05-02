@@ -13,7 +13,6 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
-#include <QtWidgets/QScrollBar>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTextBrowser>
 #include <QtWidgets/QWidget>
@@ -24,8 +23,7 @@ class Ui_displaymenu
 {
 public:
     QWidget *centralwidget;
-    QTextBrowser *textBrowser;
-    QScrollBar *verticalScrollBar;
+    QTextBrowser *printTextBrowser;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -33,20 +31,16 @@ public:
     {
         if (displaymenu->objectName().isEmpty())
             displaymenu->setObjectName("displaymenu");
-        displaymenu->resize(800, 565);
+        displaymenu->resize(390, 565);
         centralwidget = new QWidget(displaymenu);
         centralwidget->setObjectName("centralwidget");
-        textBrowser = new QTextBrowser(centralwidget);
-        textBrowser->setObjectName("textBrowser");
-        textBrowser->setGeometry(QRect(0, 0, 801, 451));
-        verticalScrollBar = new QScrollBar(centralwidget);
-        verticalScrollBar->setObjectName("verticalScrollBar");
-        verticalScrollBar->setGeometry(QRect(780, 0, 20, 451));
-        verticalScrollBar->setOrientation(Qt::Vertical);
+        printTextBrowser = new QTextBrowser(centralwidget);
+        printTextBrowser->setObjectName("printTextBrowser");
+        printTextBrowser->setGeometry(QRect(0, 0, 391, 521));
         displaymenu->setCentralWidget(centralwidget);
         menubar = new QMenuBar(displaymenu);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 800, 21));
+        menubar->setGeometry(QRect(0, 0, 390, 21));
         displaymenu->setMenuBar(menubar);
         statusbar = new QStatusBar(displaymenu);
         statusbar->setObjectName("statusbar");
