@@ -27,7 +27,7 @@ public:
     QPushButton *pushButton;
     QPushButton *pushButton_2;
     QPushButton *pushButton_3;
-    QPushButton *pushButton_4;
+    QPushButton *Search;
     QTextBrowser *textBrowser;
     QMenuBar *menubar;
     QStatusBar *statusbar;
@@ -48,9 +48,9 @@ public:
         pushButton_3 = new QPushButton(centralwidget);
         pushButton_3->setObjectName("pushButton_3");
         pushButton_3->setGeometry(QRect(380, 510, 83, 29));
-        pushButton_4 = new QPushButton(centralwidget);
-        pushButton_4->setObjectName("pushButton_4");
-        pushButton_4->setGeometry(QRect(550, 510, 111, 29));
+        Search = new QPushButton(centralwidget);
+        Search->setObjectName("Search");
+        Search->setGeometry(QRect(550, 510, 111, 29));
         textBrowser = new QTextBrowser(centralwidget);
         textBrowser->setObjectName("textBrowser");
         textBrowser->setGeometry(QRect(10, 10, 771, 491));
@@ -77,7 +77,7 @@ public:
         pushButton->setText(QCoreApplication::translate("finalmenu", "edit", nullptr));
         pushButton_2->setText(QCoreApplication::translate("finalmenu", "Display sorted", nullptr));
         pushButton_3->setText(QCoreApplication::translate("finalmenu", "Display", nullptr));
-        pushButton_4->setText(QCoreApplication::translate("finalmenu", "Search", nullptr));
+        Search->setText(QCoreApplication::translate("finalmenu", "Search", nullptr));
     } // retranslateUi
 
 };

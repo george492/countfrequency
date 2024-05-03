@@ -28,6 +28,7 @@ wordfrequancy.h wordfrequancy.cpp
 finalmenu.h finalmenu.cpp finalmenu.ui
 firstmenu.h firstmenu.cpp firstmenu.ui
 displaymenu.h displaymenu.cpp displaymenu.ui
+searchwindow.h searchwindow.cpp searchwindow.ui
 
     )
 # Define target properties for Android with Qt 6 as:

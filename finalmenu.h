@@ -16,9 +16,8 @@ public:
     ~finalmenu();
     void updatetext();
 
-
 public slots:
-
+    void searchwin();
     void openDisplaymenu();
     void openOrderedDisplaymenu();
 

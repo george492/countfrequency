@@ -5,7 +5,6 @@
 #include <iostream>
 using namespace std;
 
-
 namespace Ui {
 class displaymenu;
 }
@@ -18,7 +17,6 @@ public:
     explicit displaymenu(QWidget *parent = nullptr);
     ~displaymenu();
     void printText(string);
-
 
 private:
     Ui::displaymenu *ui;

@@ -3,7 +3,7 @@
 #include "mainwindow.h"
 #include "ui_finalmenu.h"
 #include "wordfrequancy.h"
-
+#include "searchwindow.h"
 extern std::string globalString;
 
 finalmenu::finalmenu(QWidget *parent)
@@ -18,11 +18,17 @@ finalmenu::finalmenu(QWidget *parent)
 
     connect(ui->pushButton_2, &QPushButton::clicked, this, &finalmenu::openOrderedDisplaymenu);
 
+    connect(ui->Search, &QPushButton::clicked, this, &finalmenu::searchwin);
 }
 
 finalmenu::~finalmenu()
 {
     delete ui;
+}
+void finalmenu::searchwin()
+{
+    searchwindow *s = new searchwindow();
+    s->show();
 }
 void finalmenu::on_pushButton_clicked()
 {

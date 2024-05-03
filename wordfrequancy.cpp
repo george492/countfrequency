@@ -154,12 +154,11 @@ string WordFrequancy::displayFrequancy()
     string unorderedString;
 
     unorderedString = "Word\t\t\tFrequancy\n\n";
-    for (auto t = displayMap.begin();t != displayMap.end();t++)
-    {
-        unorderedString += t->first + "\n\t\t\t       " + to_string(t->second) + "\n----------------------------------------------------\n\n";
+    for (auto t = displayMap.begin(); t != displayMap.end(); t++) {
+        unorderedString += t->first + "\n\t\t\t       " + to_string(t->second)
+                           + "\n----------------------------------------------------\n\n";
     }
     return unorderedString;
-
 }
 
 //display sorted word's frequancy
@@ -168,16 +167,17 @@ string WordFrequancy::displaySortedFrequancy()
 {
     stack<pair<string, int>> displaySortedStack = countFrequencySorted(paragraph);
     int size = displaySortedStack.size();
-    pair<string,int> data;
+    pair<string, int> data;
     string sortedString;
 
     sortedString = "    Word\t\t\tFrequancy\n\n";
-    for(int i = 1;i<=size;i++)
-    {
+    for (int i = 1; i <= size; i++) {
         data = displaySortedStack.top();
         displaySortedStack.pop();
 
-        sortedString += "(" + to_string(i) + ")_" + data.first + "\n\t\t\t       " + to_string(data.second) + "\n----------------------------------------------------\n\n";
+        sortedString += "(" + to_string(i) + ")_" + data.first + "\n\t\t\t       "
+                        + to_string(data.second)
+                        + "\n----------------------------------------------------\n\n";
     }
     return sortedString;
 }
