@@ -9,8 +9,8 @@
 #include <QFileDialog>
 #include <QMessageBox>
 #include <QTextStream>
-extern std::string globalString;
 using namespace std;
+extern string globalString;
 searchwindow::searchwindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::searchwindow)
@@ -40,6 +40,7 @@ void searchwindow::search() {
         WordFrequancy c = WordFrequancy(globalString);
         QString result, s;
         QString word = ui->textEdit->toPlainText();
+        word.isLower();
         QFile file(fileName);
         if (file.open(QIODevice::ReadOnly | QIODevice::Text)) {
             QTextStream in(&file);
@@ -94,12 +95,13 @@ void searchwindow::displayresults()
 {
     WordFrequancy c = WordFrequancy(globalString);
     QString s =ui->textEdit_2->toPlainText();
+    s.isLower();
     QString s1;
     unordered_map<string, int> myMap=c.count(globalString);
     auto it =myMap.find(s.toStdString());
     // Search in the map
-    if (it != myMap.end()) {
-        s1 = "Word '" + s + "' found in map with frequency: " + QString::number(it->second) + "\n";
+    if (it != myMap.end() ) {
+        s1 = "Word '" + QString::fromStdString(it->first) + "' found in map with frequency: " + QString::number(it->second) + "\n";
         msgbox(s1);
     } else {
         msg("not found","error");
