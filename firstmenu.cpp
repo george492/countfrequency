@@ -7,8 +7,8 @@
 #include "mainwindow.h"
 #include "ui_firstmenu.h"
 #include <string>
+#include "WordFrequancy.h"
 using namespace std;
-extern std::string globalString;
 firstmenu::firstmenu(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::firstmenu)
@@ -40,7 +40,7 @@ void firstmenu::on_loadButton_clicked()
             QString fileContent = in.readAll();
             // globalstring=in.readAll();
             // ui->textInput->setPlainText(fileContent);
-            globalString = fileContent.toStdString();
+            WordFrequancy::globalString = fileContent.toStdString();
             file.close();
             this->hide();
             t->show();

@@ -1,7 +1,6 @@
 #include "displaymenu.h"
 #include "ui_displaymenu.h"
-extern std::string globalString;
-
+#include "WordFrequancy.h"
 displaymenu::displaymenu(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::displaymenu)

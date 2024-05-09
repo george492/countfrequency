@@ -1,16 +1,15 @@
 #include "searchwindow.h"
 #include "ui_searchwindow.h"
+#include "WordFrequancy.h"
 #include <map>
 #include <unordered_map>
 #include <string>
 #include <QString>
-#include"wordfrequancy.h"
 #include <QFile>
 #include <QFileDialog>
 #include <QMessageBox>
 #include <QTextStream>
 using namespace std;
-extern string globalString;
 searchwindow::searchwindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::searchwindow)
@@ -37,7 +36,7 @@ searchwindow::~searchwindow()
 void searchwindow::search() {
     QString fileName = QFileDialog::getOpenFileName(this, "Open File", QDir::homePath());
     if (!fileName.isEmpty()) {
-        WordFrequancy c = WordFrequancy(globalString);
+        WordFrequancy c = WordFrequancy(WordFrequancy::globalString);
         QString result, s;
         QString word = ui->textEdit->toPlainText();
         word.isLower();
@@ -62,7 +61,7 @@ void searchwindow::search() {
         //======================================================================================================
 
         // Search in the map
-        unordered_map<string, int> myMap=c.count(globalString);
+        unordered_map<string, int> myMap=c.count(WordFrequancy::globalString);
         auto it =myMap.find(word.toStdString());
         if (it != myMap.end()) {
             s = "Word '" + word + "\n";
@@ -93,11 +92,11 @@ void searchwindow::search() {
 }
 void searchwindow::displayresults()
 {
-    WordFrequancy c = WordFrequancy(globalString);
+    WordFrequancy c = WordFrequancy(WordFrequancy::globalString);
     QString s =ui->textEdit_2->toPlainText();
     s.isLower();
     QString s1;
-    unordered_map<string, int> myMap=c.count(globalString);
+    unordered_map<string, int> myMap=c.count(WordFrequancy::globalString);
     auto it =myMap.find(s.toStdString());
     // Search in the map
     if (it != myMap.end() ) {

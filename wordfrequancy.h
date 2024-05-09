@@ -10,6 +10,7 @@ class WordFrequancy
 {
 public:
     string paragraph;
+    static string globalString;
     WordFrequancy(string paragraph);
     unordered_map<string, int> count(string paragraph);
     stack<pair<string, int>> countFrequencySorted(string paragraph);

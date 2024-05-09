@@ -4,7 +4,6 @@
 #include "ui_finalmenu.h"
 #include "wordfrequancy.h"
 #include "searchwindow.h"
-extern std::string globalString;
 
 finalmenu::finalmenu(QWidget *parent)
     : QMainWindow(parent)
@@ -38,7 +37,7 @@ void finalmenu::on_pushButton_clicked()
 }
 void finalmenu::updatetext()
 {
-    ui->textBrowser->setText(QString::fromStdString(globalString));
+    ui->textBrowser->setText(QString::fromStdString(WordFrequancy::globalString));
 }
 
 // display the window of unordered frequency
@@ -46,7 +45,7 @@ void finalmenu::openDisplaymenu()
 {
     displayMenu = new displaymenu(this);
     string display;
-    WordFrequancy unorderedDisplay = WordFrequancy(globalString);
+    WordFrequancy unorderedDisplay = WordFrequancy(WordFrequancy::globalString);
     display = unorderedDisplay.displayFrequancy();
     displayMenu->printText(display);
     displayMenu->show();
@@ -57,7 +56,7 @@ void finalmenu::openOrderedDisplaymenu()
 {
     displayMenu = new displaymenu(this);
     string display;
-    WordFrequancy orderedDisplay = WordFrequancy(globalString);
+    WordFrequancy orderedDisplay = WordFrequancy(WordFrequancy::globalString);
     display = orderedDisplay.displaySortedFrequancy();
     displayMenu->printText(display);
     displayMenu->show();
