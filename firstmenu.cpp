@@ -27,7 +27,9 @@ void firstmenu::on_submitButton_clicked()
 {
     MainWindow *M = new MainWindow();
     //load history at the begining of program
-    WordFrequancy::loadHistoryFromFile("C:/Users/alima/Documents/countfrequency/CommonWords.txt");
+    //WordFrequancy::loadHistoryFromFile("C:/Users/alima/Documents/countfrequency/CommonWords.txt");
+    //WordFrequancy::clearFile("C:/Users/alima/Documents/countfrequency/CommonWords.txt");
+    //
     this->hide();
     M->show();
 }
@@ -35,7 +37,9 @@ void firstmenu::on_submitButton_clicked()
 void firstmenu::on_loadButton_clicked()
 {
     //load history at the begining of program
-    WordFrequancy::loadHistoryFromFile("C:/Users/alima/Documents/countfrequency/CommonWords.txt");
+    //WordFrequancy::loadHistoryFromFile("C:/Users/alima/Documents/countfrequency/CommonWords.txt");
+    //WordFrequancy::clearFile("C:/Users/alima/Documents/countfrequency/CommonWords.txt");
+    //
     finalmenu *t = new finalmenu();
     QString fileName = QFileDialog::getOpenFileName(this, "Open File", QDir::homePath());
     if (!fileName.isEmpty()) {

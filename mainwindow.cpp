@@ -20,6 +20,7 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
+
 void MainWindow::on_pushButton_clicked()
 {
     QString text = ui->textEdit->toPlainText();
@@ -35,3 +36,4 @@ void MainWindow::on_pushButton_clicked()
     this->hide();
     t->show();
 }
+

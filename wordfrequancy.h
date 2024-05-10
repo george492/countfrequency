@@ -24,6 +24,8 @@ public:
 
     void static storeHistoryFromFile(const QString& fileName);
 
+    void static clearFile(const QString& fileName);
+
     string displayFrequancy();
 
     string displaySortedFrequancy();

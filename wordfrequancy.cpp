@@ -147,8 +147,17 @@ void WordFrequancy::loadHistoryFromFile(const QString& fileName)
 
         }
     }
+}
 
-    loadFile.close();
+void WordFrequancy::clearFile(const QString& fileName)
+{
+    QFile File(fileName);
+
+    if (File.open(QIODevice::WriteOnly | QIODevice::Truncate | QIODevice::Text))
+    {
+        File.close();
+    }
+
 }
 
 void WordFrequancy::storeHistoryFromFile(const QString& fileName)
@@ -172,17 +181,16 @@ void WordFrequancy::dispalyHistoryFrequancy()
     bool founded = false;
     for(auto history = historyMap.begin(); history != historyMap.end(); history++){
         for(auto it = globalMap.begin(); it != globalMap.end(); it++){
-            if(history->second >= 10){
-                if(history->first == it->first){
-                    it->second++;
-                    founded = true;
-                    break;
-                }
+
+            if(history->first == it->first){
+                it->second += history->second;
+                founded = true;
+                break;
             }
         }
 
         if(!founded && history->second >= 10){
-            globalMap.insert({history->first,1});
+            globalMap.insert({history->first,history->second});
         }
         founded = false;
     }

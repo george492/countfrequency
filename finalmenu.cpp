@@ -72,16 +72,18 @@ void finalmenu::openOrderedDisplaymenu()
 // display the window of history words
 void finalmenu::openHistoryDisplaymenu()
 {
+
     displayMenu = new displaymenu(this);
     WordFrequancy historyDisplay = WordFrequancy(WordFrequancy::globalString);
     historyDisplay.dispalyHistoryFrequancy();
     unordered_map<string,int> historyMap = historyDisplay.globalMap;
-    string display = "\t    History Frequency\nWord\t\tFrequency\n\n";
+    string display = "\t    History Frequency\n\nWord\t\t\t      Frequency\n\n";
 
     for(auto history = historyMap.begin(); history != historyMap.end(); history++){
 
-        display += "{ " + history->first + " }\n\t\t" + to_string(history->second) + "\n----------------------------------------------------\n\n";
+        display += "{ " + history->first + " }\n\t\t\t          " + to_string(history->second) + "\n----------------------------------------------------\n\n";
     }
+
     WordFrequancy::storeHistoryFromFile("C:/Users/alima/Documents/countfrequency/CommonWords.txt");
     displayMenu->printText(display);
     displayMenu->show();
