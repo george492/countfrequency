@@ -38,7 +38,7 @@ constexpr auto qt_meta_stringdata_CLASSfinalmenuENDCLASS = QtMocHelpers::stringD
     "",
     "openDisplaymenu",
     "openOrderedDisplaymenu",
-    "openCommonDisplaymenu"
+    "openHistoryDisplaymenu"
 );
 #else  // !QT_MOC_HAS_STRINGDATA
 #error "qtmochelpers.h not found or too old."
@@ -88,7 +88,7 @@ Q_CONSTINIT const QMetaObject finalmenu::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'openOrderedDisplaymenu'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'openCommonDisplaymenu'
+        // method 'openHistoryDisplaymenu'
         QtPrivate::TypeAndForceComplete<void, std::false_type>
     >,
     nullptr
@@ -103,7 +103,7 @@ void finalmenu::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, v
         case 0: _t->searchwin(); break;
         case 1: _t->openDisplaymenu(); break;
         case 2: _t->openOrderedDisplaymenu(); break;
-        case 3: _t->openCommonDisplaymenu(); break;
+        case 3: _t->openHistoryDisplaymenu(); break;
         default: ;
         }
     }

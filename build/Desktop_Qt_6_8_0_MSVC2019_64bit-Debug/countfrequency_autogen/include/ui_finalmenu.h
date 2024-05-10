@@ -82,7 +82,7 @@ public:
         pushButton_2->setText(QCoreApplication::translate("finalmenu", "Display sorted", nullptr));
         pushButton_3->setText(QCoreApplication::translate("finalmenu", "Display", nullptr));
         Search->setText(QCoreApplication::translate("finalmenu", "Search", nullptr));
-        pushButton_4->setText(QCoreApplication::translate("finalmenu", "Common words", nullptr));
+        pushButton_4->setText(QCoreApplication::translate("finalmenu", "Display history", nullptr));
     } // retranslateUi
 
 };

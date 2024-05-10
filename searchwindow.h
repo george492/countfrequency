@@ -24,6 +24,7 @@ private:
     void msgbox(const QString &text);
     void msg(const QString &text, const QString &title);
     void displayresults();
+    void close();
 
 };
 

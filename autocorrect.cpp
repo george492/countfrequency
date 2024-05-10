@@ -7,9 +7,10 @@
 #include <QInputDialog>
 #include <set>
 #include <regex>
+#include <vector>
+#include <string>
 using namespace std;
-std::set<std::string>  autocorrect::arabic;
-std::set<std::string>  autocorrect::english;
+//std::set<std::string>  autocorrect::english;
 autocorrect::autocorrect(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::autocorrect)
@@ -21,24 +22,7 @@ autocorrect::~autocorrect()
 {
     delete ui;
 }
-
-std::set<std::string> autocorrect::load(QString fileName){
-    std::set<std::string> s; // Use std:: prefix
-    if (!fileName.isEmpty()) {
-        QFile file(fileName);
-        if (file.open(QIODevice::ReadOnly | QIODevice::Text)) {
-            QTextStream in(&file);
-            QString fileContent = in.readAll();
-            s.insert(fileContent.toStdString());
-            file.close();
-        }
-        //else {
-          //  QMessageBox::warning(this, "Error", "Failed to open file.");
-         //   return -1;
-       // }
-    }
-    return s;
-}
+/*
 std::string autocorrect::search(std::string s,std::set<std::string> a){
     bool found = false;
     std::set<std::string> tmp;
@@ -52,14 +36,15 @@ std::string autocorrect::search(std::string s,std::set<std::string> a){
                 found = true;
             }
         }
+        if (!found) {
+            QMessageBox::warning(this ,"Error", "Pattern not matched");
+            return s;
+        }   else{
+            return print(tmp,s);
+        }
+
     }
-    if (!found) {
-        QMessageBox::warning(this ,"Error", "Pattern not matched");
-        return s;
-    }   else{
-       return print(tmp,s);
     }
-}
 bool autocorrect::like(const std::string &str, const std::string &pattern) {
     regex regexPattern(pattern);
     return regex_search(str, regexPattern);
@@ -88,9 +73,49 @@ std::string autocorrect::print(std::set<std::string> tmp,std::string s)
         close();
     }
 }
-void autocorrect::loadfromfiles()
+string autocorrect::processParagraph( string paragraph)
 {
-  arabic =autocorrect::load("C:\\Users\\georg\\Downloads\\AllListWordArabic.txt");
-  english=autocorrect::load("C:\\Users\\georg\\Downloads\\words (1).txt");
+    vector<string> words;
+    string word;
+    bool englis = false;
+    for (char c : paragraph) {
+        if (isalpha(c)) {
+            word += tolower(c); // Convert to lowercase
+        }
+        else if (!word.empty()) {
 
+            words.push_back(word);
+            word.clear();
+        }
+    }
+    if (!word.empty()) {
+
+        words.push_back(word);
+    }
+    for(string z: words)
+    {
+        for (char c : z) {
+            if (isEnglish(c)) {
+                englis = true;
+            }
+        }
+        if (englis)
+        {
+            z=print(english,z);
+        }else {
+            z=print(arabic,z);
+        }
+    }
+    // Construct the modified paragraph
+    string modifiedParagraph;
+    for (const string& w : words) {
+        modifiedParagraph += w + " "; // Add a space between words
+    }
+    // Remove the trailing space
+    if (!modifiedParagraph.empty()) {
+        modifiedParagraph.pop_back();
+    }
+
+    return modifiedParagraph;
 }
+*/

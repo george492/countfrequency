@@ -91,7 +91,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Common words</string>
+     <string>Display history</string>
     </property>
    </widget>
   </widget>

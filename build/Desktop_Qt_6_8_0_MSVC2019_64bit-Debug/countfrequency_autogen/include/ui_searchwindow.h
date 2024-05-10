@@ -30,6 +30,7 @@ public:
     QPushButton *pushButton_2;
     QTextEdit *textEdit;
     QTextEdit *textEdit_2;
+    QPushButton *close;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -37,7 +38,7 @@ public:
     {
         if (searchwindow->objectName().isEmpty())
             searchwindow->setObjectName("searchwindow");
-        searchwindow->resize(401, 600);
+        searchwindow->resize(485, 600);
         centralwidget = new QWidget(searchwindow);
         centralwidget->setObjectName("centralwidget");
         pushButton = new QPushButton(centralwidget);
@@ -48,17 +49,20 @@ public:
         Searchresults->setGeometry(QRect(10, 50, 371, 461));
         pushButton_2 = new QPushButton(centralwidget);
         pushButton_2->setObjectName("pushButton_2");
-        pushButton_2->setGeometry(QRect(290, 520, 91, 29));
+        pushButton_2->setGeometry(QRect(260, 520, 91, 29));
         textEdit = new QTextEdit(centralwidget);
         textEdit->setObjectName("textEdit");
         textEdit->setGeometry(QRect(20, 10, 251, 31));
         textEdit_2 = new QTextEdit(centralwidget);
         textEdit_2->setObjectName("textEdit_2");
-        textEdit_2->setGeometry(QRect(20, 520, 251, 31));
+        textEdit_2->setGeometry(QRect(0, 520, 251, 31));
+        close = new QPushButton(centralwidget);
+        close->setObjectName("close");
+        close->setGeometry(QRect(370, 520, 83, 29));
         searchwindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(searchwindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 401, 25));
+        menubar->setGeometry(QRect(0, 0, 485, 25));
         searchwindow->setMenuBar(menubar);
         statusbar = new QStatusBar(searchwindow);
         statusbar->setObjectName("statusbar");
@@ -74,6 +78,7 @@ public:
         searchwindow->setWindowTitle(QCoreApplication::translate("searchwindow", "MainWindow", nullptr));
         pushButton->setText(QCoreApplication::translate("searchwindow", "Search", nullptr));
         pushButton_2->setText(QCoreApplication::translate("searchwindow", "Display", nullptr));
+        close->setText(QCoreApplication::translate("searchwindow", "Close", nullptr));
     } // retranslateUi
 
 };

@@ -5,12 +5,14 @@
 #include <string>
 #include <unordered_map>
 #include <vector>
+#include <QString>
 using namespace std;
 class WordFrequancy
 {
 public:
     string paragraph;
     static string globalString;
+    static unordered_map<string,int> globalMap;
     WordFrequancy(string paragraph);
     unordered_map<string, int> count(string paragraph);
     stack<pair<string, int>> countFrequencySorted(string paragraph);
@@ -18,9 +20,15 @@ public:
     string to_lower(string paragraph);
     // void workFlow(string paragraph);
 
+    void static loadHistoryFromFile(const QString& fileName);
+
+    void static storeHistoryFromFile(const QString& fileName);
+
     string displayFrequancy();
 
     string displaySortedFrequancy();
 
-    void displayCommonWords();
+    void dispalyHistoryFrequancy();
+
+
 };

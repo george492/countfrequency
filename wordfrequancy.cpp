@@ -11,9 +11,11 @@
 #include <vector>
 #include <set>
 #include <QFile>
+#include <QDebug>
 #include <QTextStream>
 using namespace std;
-string WordFrequancy::globalString ;
+string WordFrequancy::globalString;
+unordered_map<string,int> WordFrequancy::globalMap;
 
 WordFrequancy::WordFrequancy(string paragraph)
 {
@@ -131,54 +133,57 @@ string WordFrequancy::displaySortedFrequancy()
     return sortedString;
 }
 
-//display common words
-
-void WordFrequancy::displayCommonWords()
+void WordFrequancy::loadHistoryFromFile(const QString& fileName)
 {
-    autocorrect readObject;
-    set<string> readText = readObject.load("C:\\Users\alima\\Documents\\countfrequency\\CommonWords.txt");
-    stack<pair<string, int>> SortedStack = countFrequencySorted(paragraph);
-    pair<string, int> data;
-    int size = SortedStack.size();
-    set<string> newWords;
-    bool founded = false;
+    QFile loadFile(fileName);
+    if (loadFile.open(QIODevice::ReadOnly | QIODevice::Text)) {
 
-    for(int i = 0;i < size;i++){
-        data = SortedStack.top();
-        SortedStack.pop();
+        QTextStream reading(&loadFile);
+        while(!reading.atEnd()){
+            string stringLine = reading.readLine().toStdString();
+            int intLine = reading.readLine().toInt();
 
-        if(data.second < 15){
-            break;
+            globalMap.insert({stringLine,intLine});
+
         }
+    }
 
-        else if(data.second >= 15){
-            if(!readText.empty()){
+    loadFile.close();
+}
 
-                for(auto it = readText.begin();it != readText.end();it++){
+void WordFrequancy::storeHistoryFromFile(const QString& fileName)
+{
+    QFile storeFile(fileName);
+    if (storeFile.open(QIODevice::Append | QIODevice::Text)) {
+        QTextStream writing(&storeFile);
+        for(auto it = globalMap.begin();it != globalMap.end();it++){
+            writing << QString::fromStdString(it->first)<<"\n";
+            writing << QString::fromStdString(to_string(it->second))<<"\n";
+        }
+    }
+    storeFile.close();
+}
 
-                    if(data.first == it->data()){
+//dispaly history frequency
+
+void WordFrequancy::dispalyHistoryFrequancy()
+{
+    unordered_map<string, int> historyMap = count(paragraph);
+    bool founded = false;
+    for(auto history = historyMap.begin(); history != historyMap.end(); history++){
+        for(auto it = globalMap.begin(); it != globalMap.end(); it++){
+            if(history->second >= 10){
+                if(history->first == it->first){
+                    it->second++;
                     founded = true;
                     break;
-                    }
                 }
             }
-            if(!founded){
-                newWords.insert(data.first);
-            }
+        }
+
+        if(!founded && history->second >= 10){
+            globalMap.insert({history->first,1});
         }
         founded = false;
     }
-
-    QFile file("C:\\Users\alima\\Documents\\countfrequency\\CommonWords.txt");
-    if (!file.open(QIODevice::Append | QIODevice::Text)) {
-        qDebug() << "Failed to open file for writing.";
-    }
-
-    QTextStream writingFile(&file);
-    for(auto it = newWords.begin();it != newWords.end();it++){
-        writingFile<<it->data()<<" ";
-    }
-
-    file.close();
-
 }

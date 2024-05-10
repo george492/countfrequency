@@ -11,10 +11,10 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
 
         firstmenu mainWindow;
-    autocorrect::loadfromfiles();
+   // autocorrect::loadfromfiles();
     mainWindow.show();
 
     // Create and show the new dialog
-
+    WordFrequancy::storeHistoryFromFile("C:/Users/alima/Documents/countfrequency/CommonWords.txt");
     return a.exec();
 }

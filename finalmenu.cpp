@@ -6,7 +6,6 @@
 #include "searchwindow.h"
 #include "autocorrect.h"
 #include <set>
-
 finalmenu::finalmenu(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::finalmenu)
@@ -19,13 +18,15 @@ finalmenu::finalmenu(QWidget *parent)
 
     connect(ui->pushButton_2, &QPushButton::clicked, this, &finalmenu::openOrderedDisplaymenu);
 
-    connect(ui->pushButton_4, &QPushButton::clicked, this, &finalmenu::openCommonDisplaymenu);
+    connect(ui->pushButton_4, &QPushButton::clicked, this, &finalmenu::openHistoryDisplaymenu);
 
     connect(ui->Search, &QPushButton::clicked, this, &finalmenu::searchwin);
 }
 
 finalmenu::~finalmenu()
 {
+    //store the history
+    WordFrequancy::storeHistoryFromFile("C:/Users/alima/Documents/countfrequency/CommonWords.txt");
     delete ui;
 }
 void finalmenu::searchwin()
@@ -36,6 +37,8 @@ void finalmenu::searchwin()
 void finalmenu::on_pushButton_clicked()
 {
     MainWindow *M = new MainWindow();
+    //autocorrect *a=new autocorrect();
+ //   WordFrequancy::globalString=a->processParagraph(WordFrequancy::globalString);
     this->hide();
     M->show();
 }
@@ -66,23 +69,20 @@ void finalmenu::openOrderedDisplaymenu()
     displayMenu->show();
 }
 
-// display the window of common words
-void finalmenu::openCommonDisplaymenu()
+// display the window of history words
+void finalmenu::openHistoryDisplaymenu()
 {
     displayMenu = new displaymenu(this);
-    string display;
-    set<string> commonWords;
-    WordFrequancy commondDisplay = WordFrequancy(WordFrequancy::globalString);
-    autocorrect loadData;
-    commondDisplay.displayCommonWords();
-    commonWords = loadData.load("C:\\Users\alima\\Documents\\countfrequency\\CommonWords.txt");
+    WordFrequancy historyDisplay = WordFrequancy(WordFrequancy::globalString);
+    historyDisplay.dispalyHistoryFrequancy();
+    unordered_map<string,int> historyMap = historyDisplay.globalMap;
+    string display = "\t    History Frequency\nWord\t\tFrequency\n\n";
 
-    display = "\t\tCommon Words\n\n";
-    for(auto it = commonWords.begin();it != commonWords.end();it++){
-        display += "{ ";
-        display += it->data();
-        display += " }\n----------------------------------------------------\n\n";
+    for(auto history = historyMap.begin(); history != historyMap.end(); history++){
+
+        display += "{ " + history->first + " }\n\t\t" + to_string(history->second) + "\n----------------------------------------------------\n\n";
     }
+    WordFrequancy::storeHistoryFromFile("C:/Users/alima/Documents/countfrequency/CommonWords.txt");
     displayMenu->printText(display);
     displayMenu->show();
 }

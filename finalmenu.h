@@ -20,7 +20,7 @@ public slots:
     void searchwin();
     void openDisplaymenu();
     void openOrderedDisplaymenu();
-    void openCommonDisplaymenu();
+    void openHistoryDisplaymenu();
 
 private:
     Ui::finalmenu *ui;
