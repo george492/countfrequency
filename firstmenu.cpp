@@ -1,6 +1,5 @@
 #include "firstmenu.h"
 #include <QFile>
-#include <QDir>
 #include <QFileDialog>
 #include <QMessageBox>
 #include <QPushButton>
@@ -9,7 +8,10 @@
 #include "ui_firstmenu.h"
 #include <string>
 #include "WordFrequancy.h"
+#include "datamanager.h"
+
 using namespace std;
+//string globalString; // Declare the global variable
 firstmenu::firstmenu(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::firstmenu)
@@ -26,20 +28,12 @@ firstmenu::~firstmenu()
 void firstmenu::on_submitButton_clicked()
 {
     MainWindow *M = new MainWindow();
-    //load history at the begining of program
-    //WordFrequancy::loadHistoryFromFile("C:/Users/alima/Documents/countfrequency/CommonWords.txt");
-    //WordFrequancy::clearFile("C:/Users/alima/Documents/countfrequency/CommonWords.txt");
-    //
     this->hide();
     M->show();
 }
 
 void firstmenu::on_loadButton_clicked()
 {
-    //load history at the begining of program
-    //WordFrequancy::loadHistoryFromFile("C:/Users/alima/Documents/countfrequency/CommonWords.txt");
-    //WordFrequancy::clearFile("C:/Users/alima/Documents/countfrequency/CommonWords.txt");
-    //
     finalmenu *t = new finalmenu();
     QString fileName = QFileDialog::getOpenFileName(this, "Open File", QDir::homePath());
     if (!fileName.isEmpty()) {
@@ -49,7 +43,7 @@ void firstmenu::on_loadButton_clicked()
             QString fileContent = in.readAll();
             // globalstring=in.readAll();
             // ui->textInput->setPlainText(fileContent);
-            WordFrequancy::globalString = fileContent.toStdString();
+            DataManager::instance().setString( fileContent);
             file.close();
             this->hide();
             t->show();

@@ -1,7 +1,6 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 #include <QMainWindow>
-#include <QCloseEvent>>
 #include <QString>
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -14,10 +13,10 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-    void setLabelText(const std::string &text);
+    void setLabelText();
     void on_pushButton_clicked();
+    Ui::MainWindow *ui;
 
 private:
-    Ui::MainWindow *ui;
 };
 #endif // MAINWINDOW_H

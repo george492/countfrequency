@@ -9,7 +9,10 @@
 #include <QFileDialog>
 #include <QMessageBox>
 #include <QTextStream>
+#include "datamanager.h"
+
 using namespace std;
+//string globalString; // Declare the global variable
 searchwindow::searchwindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::searchwindow)
@@ -37,65 +40,62 @@ searchwindow::~searchwindow()
 }
 void searchwindow::search() {
     QString fileName = QFileDialog::getOpenFileName(this, "Open File", QDir::homePath());
-    if (!fileName.isEmpty()) {
-        QFile file(fileName);
-        WordFrequancy c = WordFrequancy(WordFrequancy::globalString);
-        QString result, s;
-        QString word = ui->textEdit->toPlainText();
-        word = word.toLower(); // Ensure word is converted to lowercase
-        bool wordFoundInFile = false;
-        if (file.open(QIODevice::ReadOnly | QIODevice::Text)) {
-            QTextStream in(&file);
-            QChar firstAlphabet = word.at(0);
-            s = "Searching in file for words starting with " + QString(firstAlphabet) + "':\n";
-            display(s);
-            while (!in.atEnd()) {
-                result = in.readLine();
-                if (result.contains(word, Qt::CaseInsensitive)) {
-                    display(result + " found");
-                    wordFoundInFile = true;
-                }
-            }
-            file.close();
-        } else {
-            msg("Unable to open file.", "error");
-            return;
-        }
-
-        // Check if word found in map
-        unordered_map<string, int> myMap = c.count(WordFrequancy::globalString);
-        auto it = myMap.find(word.toStdString());
-        if (it != myMap.end()) {
-            s = "Word '" + word + "' found in map\n";
-            display(s);
-        }
-
-        // Save the word in the file if it's new
-        if (!word.isEmpty() && word.length() > 1 && !wordFoundInFile) {
-            QFile outFile(fileName);
-            if (outFile.open(QIODevice::Append | QIODevice::Text)) {
-                QTextStream out(&outFile);
-                out << word << "\n"; // Convert to QString and write to QTextStream
-                outFile.close();
-            } else {
-                msg("Unable to open file to save word.", "error");
-            }
-        } else if (wordFoundInFile) {
-            msg("Word found in the file.", "info");
-        } else {
-            msg("Word is too short or already exists in the file.", "info");
-        }
-    } else {
+    if (fileName.isEmpty()) {
         msg("No file selected.", "error");
+        return;
+    }
+
+    QFile file(fileName);
+    if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+        msg("Unable to open file.", "error");
+        return;
+    }
+
+    WordFrequancy c = WordFrequancy(DataManager::instance().getString().toStdString());
+    QString result, s;
+    QString word = ui->textEdit->toPlainText();
+    word = word.toLower(); // Ensure word is converted to lowercase
+    bool wordFoundInFile = false;
+    QTextStream in(&file);
+    while (!in.atEnd()) {
+        result = in.readLine();
+        //result.contains(word, Qt::CaseInsensitive)
+        if (result.compare(word)) {
+            display("Suggesting: " + result);
+            wordFoundInFile = true;
+            break;
+        }
+    }
+    file.close();
+
+    // Check if the word is already in the map
+    unordered_map<string, int> myMap = c.count(DataManager::instance().getString().toStdString());
+    auto it = myMap.find(word.toStdString());
+    if (it != myMap.end()) {
+        display(word + " found in map.");
+        return;
+    }
+
+    // Save the word in the file if it's new and not found in the file
+    if (!wordFoundInFile && word.length() > 1) {
+        QFile outFile(fileName);
+        if (outFile.open(QIODevice::Append | QIODevice::Text)) {
+            QTextStream out(&outFile);
+            out << word << "\n"; // Write to file
+            outFile.close();
+            display("Word '" + word + "' saved to file.");
+        } else {
+            msg("Unable to open file to save word.", "error");
+        }
     }
 }
 void searchwindow::displayresults()
 {
-    WordFrequancy c = WordFrequancy(WordFrequancy::globalString);
+    WordFrequancy c = WordFrequancy(DataManager::instance().getString().toStdString());
     QString s =ui->textEdit_2->toPlainText();
     s.isLower();
     QString s1;
-    unordered_map<string, int> myMap=c.count(WordFrequancy::globalString);
+    unordered_map<string, int> myMap=c.count(DataManager::instance().getString().toStdString());
     auto it =myMap.find(s.toStdString());
     // Search in the map
     if (it != myMap.end() ) {
@@ -110,58 +110,3 @@ void searchwindow::displayresults()
 void searchwindow::close(){
     this->hide();
 }
-/*    QString fileName = QFileDialog::getOpenFileName(this, "Open File", QDir::homePath());
-    if (!fileName.isEmpty()) {
-        QFile file(fileName);
-        WordFrequancy c = WordFrequancy(WordFrequancy::globalString);
-        QString result, s;
-        QString word = ui->textEdit->toPlainText();
-        word.isLower();
-        if (file.open(QIODevice::ReadOnly | QIODevice::Text)) {
-            QTextStream in(&file);
-            QChar firstAlphabet = word.at(0);
-            s = "Searching in file for words starting with " + QString(firstAlphabet) + "':\n";
-            display(s);
-            while (!in.atEnd()) {
-                result = in.readLine();
-                if (result.contains(firstAlphabet)) {
-                    display(result);
-                }
-            }
-            file.close();
-        } else {
-            msg("Unable to open file.", "error");
-            return;
-        }
-
-        //======================================================================================================
-
-        // Search in the map
-        unordered_map<string, int> myMap=c.count(WordFrequancy::globalString);
-        auto it =myMap.find(word.toStdString());
-        if (it != myMap.end()) {
-            s = "Word '" + word + "\n";
-            display(s) ;
-        }
-        //else {
-          //  msg("not found","error");
-       // }
-
-        //======================================================================================================
-
-        // Save the word in the file if it's new
-        if (!word.isEmpty()&& word.length()>1) {
-            QFile outFile(fileName);
-            if (outFile.open(QIODevice::Append | QIODevice::Text)) {
-                QTextStream out(&outFile);
-                out <<word<<"\n"; // Convert to QString and write to QTextStream
-                outFile.close();
-            } else {
-                msg("Unable to open file to save word.", "error");
-            }
-        } else {
-            msg("word is too short","error");
-        }
-    } else {
-        msg("No file selected.", "error");
-    }*/

@@ -5,6 +5,9 @@
 #include "./ui_mainwindow.h"
 #include "finalmenu.h"
 #include <string>
+#include "datamanager.h"
+
+//string globalString; // Declare the global variable
 // main.cpp
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -12,7 +15,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     //ui->label->setText(QString::fromStdString(globalString));
-    ui->textEdit->setText(QString::fromStdString(WordFrequancy::globalString));
+    ui->textEdit->setText(DataManager::instance().getString());
     connect(ui->pushButton, &QPushButton::clicked, this, &MainWindow::on_pushButton_clicked);
 }
 
@@ -20,13 +23,12 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
-
 void MainWindow::on_pushButton_clicked()
 {
     QString text = ui->textEdit->toPlainText();
     finalmenu *t = new finalmenu(this);
     // Initialize a string with the retrieved text
-    WordFrequancy::globalString = text.toStdString();
+    DataManager::instance().setString(text);
     // Use the initialized string as needed
     // For example, print it to the console
     //qDebug() << "Initialized string: " << QString::fromStdString(globalString);
@@ -36,4 +38,8 @@ void MainWindow::on_pushButton_clicked()
     this->hide();
     t->show();
 }
+void MainWindow::setLabelText()
+{
+    ui->textEdit->setText(DataManager::instance().getString());
 
+}

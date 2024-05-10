@@ -1,0 +1,8 @@
+C:/Users/georg/OneDrive/Desktop/countfrequency/build/CMakeFiles/countfrequency.dir
+C:/Users/georg/OneDrive/Desktop/countfrequency/build/CMakeFiles/edit_cache.dir
+C:/Users/georg/OneDrive/Desktop/countfrequency/build/CMakeFiles/rebuild_cache.dir
+C:/Users/georg/OneDrive/Desktop/countfrequency/build/CMakeFiles/list_install_components.dir
+C:/Users/georg/OneDrive/Desktop/countfrequency/build/CMakeFiles/install.dir
+C:/Users/georg/OneDrive/Desktop/countfrequency/build/CMakeFiles/install/local.dir
+C:/Users/georg/OneDrive/Desktop/countfrequency/build/CMakeFiles/countfrequency_autogen_timestamp_deps.dir
+C:/Users/georg/OneDrive/Desktop/countfrequency/build/CMakeFiles/countfrequency_autogen.dir

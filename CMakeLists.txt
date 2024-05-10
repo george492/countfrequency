@@ -29,8 +29,11 @@ finalmenu.h finalmenu.cpp finalmenu.ui
 firstmenu.h firstmenu.cpp firstmenu.ui
 displaymenu.h displaymenu.cpp displaymenu.ui
 searchwindow.h searchwindow.cpp searchwindow.ui
-autocorrect.h autocorrect.cpp autocorrect.ui
 
+
+correcting.h correcting.cpp correcting.ui
+
+DataManager.h
 
 
     )

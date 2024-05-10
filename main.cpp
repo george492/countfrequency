@@ -1,25 +1,21 @@
-// main.cpp
 #include <QApplication>
-#include <QCloseEvent>
 #include "firstmenu.h"
 #include <string>
 #include "autocorrect.h"
 #include <set>
-#include "WordFrequancy.h"
+#include"wordfrequancy.h"
 using namespace std;
+//string globalString;
 int main(int argc, char *argv[])
 {
-    WordFrequancy::loadHistoryFromFile("C:/Users/alima/Documents/countfrequency/CommonWords.txt");
+    WordFrequancy::loadHistoryFromFile("C:/Users/georg/Downloads/TestHistory.txt");
 
-    WordFrequancy::clearFile("C:/Users/alima/Documents/countfrequency/CommonWords.txt");
+    WordFrequancy::clearFile("C:/Users/georg/Downloads/TestHistory.txt");
 
+    //load;
     QApplication a(argc, argv);
-
-        firstmenu mainWindow;
-   // autocorrect::loadfromfiles();
-
-    mainWindow.show();
-
-    // Create and show the new dialog
+     firstmenu mainWindow;
+   mainWindow.show();
+     // save;
     return a.exec();
 }

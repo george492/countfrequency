@@ -14,7 +14,7 @@
 #include <QDebug>
 #include <QTextStream>
 using namespace std;
-string WordFrequancy::globalString;
+//string WordFrequancy::globalString ;
 unordered_map<string,int> WordFrequancy::globalMap;
 
 WordFrequancy::WordFrequancy(string paragraph)
@@ -132,7 +132,6 @@ string WordFrequancy::displaySortedFrequancy()
     }
     return sortedString;
 }
-
 void WordFrequancy::loadHistoryFromFile(const QString& fileName)
 {
     QFile loadFile(fileName);
