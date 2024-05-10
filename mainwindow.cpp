@@ -22,7 +22,6 @@ MainWindow::~MainWindow()
 }
 void MainWindow::on_pushButton_clicked()
 {
-    // Retrieve text from the QTextEdit widget
     QString text = ui->textEdit->toPlainText();
     finalmenu *t = new finalmenu(this);
     // Initialize a string with the retrieved text

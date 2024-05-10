@@ -4,7 +4,7 @@
 #include "ui_finalmenu.h"
 #include "wordfrequancy.h"
 #include "searchwindow.h"
-
+#include "autocorrect.h"
 finalmenu::finalmenu(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::finalmenu)
@@ -32,6 +32,8 @@ void finalmenu::searchwin()
 void finalmenu::on_pushButton_clicked()
 {
     MainWindow *M = new MainWindow();
+    //autocorrect *a=new autocorrect();
+ //   WordFrequancy::globalString=a->processParagraph(WordFrequancy::globalString);
     this->hide();
     M->show();
 }
