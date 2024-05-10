@@ -40,7 +40,7 @@ public:
         displaymenu->setCentralWidget(centralwidget);
         menubar = new QMenuBar(displaymenu);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 390, 21));
+        menubar->setGeometry(QRect(0, 0, 390, 25));
         displaymenu->setMenuBar(menubar);
         statusbar = new QStatusBar(displaymenu);
         statusbar->setObjectName("statusbar");

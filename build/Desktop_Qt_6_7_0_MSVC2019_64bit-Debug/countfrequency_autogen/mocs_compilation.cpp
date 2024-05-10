@@ -3,3 +3,4 @@
 #include "EWIEGA46WW/moc_finalmenu.cpp"
 #include "EWIEGA46WW/moc_firstmenu.cpp"
 #include "EWIEGA46WW/moc_mainwindow.cpp"
+#include "EWIEGA46WW/moc_searchwindow.cpp"

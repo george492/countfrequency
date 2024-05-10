@@ -351,5 +351,8 @@ countfrequency_autogen/timestamp: \
   C:/Users/georg/OneDrive/Documents/countfrequency/mainwindow.cpp \
   C:/Users/georg/OneDrive/Documents/countfrequency/mainwindow.h \
   C:/Users/georg/OneDrive/Documents/countfrequency/mainwindow.ui \
+  C:/Users/georg/OneDrive/Documents/countfrequency/searchwindow.cpp \
+  C:/Users/georg/OneDrive/Documents/countfrequency/searchwindow.h \
+  C:/Users/georg/OneDrive/Documents/countfrequency/searchwindow.ui \
   C:/Users/georg/OneDrive/Documents/countfrequency/wordfrequancy.cpp \
   C:/Users/georg/OneDrive/Documents/countfrequency/wordfrequancy.h

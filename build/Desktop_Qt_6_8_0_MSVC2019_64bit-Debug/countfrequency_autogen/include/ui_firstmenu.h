@@ -44,7 +44,7 @@ public:
         firstmenu->setCentralWidget(centralwidget);
         menubar = new QMenuBar(firstmenu);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 800, 21));
+        menubar->setGeometry(QRect(0, 0, 800, 25));
         firstmenu->setMenuBar(menubar);
         statusbar = new QStatusBar(firstmenu);
         statusbar->setObjectName("statusbar");

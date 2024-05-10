@@ -112,6 +112,24 @@ build CMakeFiles\countfrequency.dir\displaymenu.cpp.obj: CXX_COMPILER__countfreq
   TARGET_COMPILE_PDB = CMakeFiles\countfrequency.dir\
   TARGET_PDB = countfrequency.pdb
 
+build CMakeFiles\countfrequency.dir\searchwindow.cpp.obj: CXX_COMPILER__countfrequency_unscanned_Debug C$:\Users\alima\Documents\countfrequency\searchwindow.cpp || cmake_object_order_depends_target_countfrequency
+  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  FLAGS = -DQT_QML_DEBUG /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 -Zc:__cplusplus -permissive- -utf-8
+  INCLUDES = -IC:\Users\alima\Documents\countfrequency\build\Desktop_Qt_6_8_0_MSVC2019_64bit-Debug\countfrequency_autogen\include -external:IC:\Qt\6.8.0\msvc2019_64\include\QtCore -external:IC:\Qt\6.8.0\msvc2019_64\include -external:IC:\Qt\6.8.0\msvc2019_64\mkspecs\win32-msvc -external:IC:\Qt\6.8.0\msvc2019_64\include\QtWidgets -external:IC:\Qt\6.8.0\msvc2019_64\include\QtGui -external:W0
+  OBJECT_DIR = CMakeFiles\countfrequency.dir
+  OBJECT_FILE_DIR = CMakeFiles\countfrequency.dir
+  TARGET_COMPILE_PDB = CMakeFiles\countfrequency.dir\
+  TARGET_PDB = countfrequency.pdb
+
+build CMakeFiles\countfrequency.dir\autocorrect.cpp.obj: CXX_COMPILER__countfrequency_unscanned_Debug C$:\Users\alima\Documents\countfrequency\autocorrect.cpp || cmake_object_order_depends_target_countfrequency
+  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  FLAGS = -DQT_QML_DEBUG /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 -Zc:__cplusplus -permissive- -utf-8
+  INCLUDES = -IC:\Users\alima\Documents\countfrequency\build\Desktop_Qt_6_8_0_MSVC2019_64bit-Debug\countfrequency_autogen\include -external:IC:\Qt\6.8.0\msvc2019_64\include\QtCore -external:IC:\Qt\6.8.0\msvc2019_64\include -external:IC:\Qt\6.8.0\msvc2019_64\mkspecs\win32-msvc -external:IC:\Qt\6.8.0\msvc2019_64\include\QtWidgets -external:IC:\Qt\6.8.0\msvc2019_64\include\QtGui -external:W0
+  OBJECT_DIR = CMakeFiles\countfrequency.dir
+  OBJECT_FILE_DIR = CMakeFiles\countfrequency.dir
+  TARGET_COMPILE_PDB = CMakeFiles\countfrequency.dir\
+  TARGET_PDB = countfrequency.pdb
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target countfrequency
@@ -120,7 +138,7 @@ build CMakeFiles\countfrequency.dir\displaymenu.cpp.obj: CXX_COMPILER__countfreq
 #############################################
 # Link the executable countfrequency.exe
 
-build countfrequency.exe: CXX_EXECUTABLE_LINKER__countfrequency_Debug CMakeFiles\countfrequency.dir\countfrequency_autogen\mocs_compilation.cpp.obj CMakeFiles\countfrequency.dir\main.cpp.obj CMakeFiles\countfrequency.dir\mainwindow.cpp.obj CMakeFiles\countfrequency.dir\wordfrequancy.cpp.obj CMakeFiles\countfrequency.dir\finalmenu.cpp.obj CMakeFiles\countfrequency.dir\firstmenu.cpp.obj CMakeFiles\countfrequency.dir\displaymenu.cpp.obj | C$:\Qt\6.8.0\msvc2019_64\lib\Qt6Widgetsd.lib C$:\Qt\6.8.0\msvc2019_64\lib\Qt6Guid.lib C$:\Qt\6.8.0\msvc2019_64\lib\Qt6Cored.lib C$:\Qt\6.8.0\msvc2019_64\lib\Qt6EntryPointd.lib || countfrequency_autogen countfrequency_autogen_timestamp_deps
+build countfrequency.exe: CXX_EXECUTABLE_LINKER__countfrequency_Debug CMakeFiles\countfrequency.dir\countfrequency_autogen\mocs_compilation.cpp.obj CMakeFiles\countfrequency.dir\main.cpp.obj CMakeFiles\countfrequency.dir\mainwindow.cpp.obj CMakeFiles\countfrequency.dir\wordfrequancy.cpp.obj CMakeFiles\countfrequency.dir\finalmenu.cpp.obj CMakeFiles\countfrequency.dir\firstmenu.cpp.obj CMakeFiles\countfrequency.dir\displaymenu.cpp.obj CMakeFiles\countfrequency.dir\searchwindow.cpp.obj CMakeFiles\countfrequency.dir\autocorrect.cpp.obj | C$:\Qt\6.8.0\msvc2019_64\lib\Qt6Widgetsd.lib C$:\Qt\6.8.0\msvc2019_64\lib\Qt6Guid.lib C$:\Qt\6.8.0\msvc2019_64\lib\Qt6Cored.lib C$:\Qt\6.8.0\msvc2019_64\lib\Qt6EntryPointd.lib || countfrequency_autogen countfrequency_autogen_timestamp_deps
   FLAGS = -DQT_QML_DEBUG /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
   LINK_FLAGS = /machine:x64 /debug /INCREMENTAL /subsystem:windows
   LINK_LIBRARIES = C:\Qt\6.8.0\msvc2019_64\lib\Qt6Widgetsd.lib  C:\Qt\6.8.0\msvc2019_64\lib\Qt6Guid.lib  C:\Qt\6.8.0\msvc2019_64\lib\Qt6Cored.lib  mpr.lib  userenv.lib  C:\Qt\6.8.0\msvc2019_64\lib\Qt6EntryPointd.lib  shell32.lib  d3d11.lib  dxgi.lib  dxguid.lib  d3d12.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
@@ -196,7 +214,7 @@ build countfrequency_autogen_timestamp_deps: phony CMakeFiles\countfrequency_aut
 #############################################
 # Utility command for countfrequency_autogen
 
-build countfrequency_autogen: phony CMakeFiles\countfrequency_autogen countfrequency_autogen\include\ui_mainwindow.h countfrequency_autogen\include\ui_finalmenu.h countfrequency_autogen\include\ui_firstmenu.h countfrequency_autogen\include\ui_displaymenu.h countfrequency_autogen\timestamp countfrequency_autogen\mocs_compilation.cpp countfrequency_autogen_timestamp_deps
+build countfrequency_autogen: phony CMakeFiles\countfrequency_autogen countfrequency_autogen\include\ui_mainwindow.h countfrequency_autogen\include\ui_finalmenu.h countfrequency_autogen\include\ui_firstmenu.h countfrequency_autogen\include\ui_displaymenu.h countfrequency_autogen\include\ui_searchwindow.h countfrequency_autogen\include\ui_autocorrect.h countfrequency_autogen\timestamp countfrequency_autogen\mocs_compilation.cpp countfrequency_autogen_timestamp_deps
 
 
 #############################################
@@ -218,7 +236,7 @@ build CMakeFiles\countfrequency_autogen_timestamp_deps | ${cmake_ninja_workdir}C
 #############################################
 # Phony custom command for CMakeFiles\countfrequency_autogen
 
-build CMakeFiles\countfrequency_autogen countfrequency_autogen\include\ui_mainwindow.h countfrequency_autogen\include\ui_finalmenu.h countfrequency_autogen\include\ui_firstmenu.h countfrequency_autogen\include\ui_displaymenu.h | ${cmake_ninja_workdir}CMakeFiles\countfrequency_autogen ${cmake_ninja_workdir}countfrequency_autogen\include\ui_mainwindow.h ${cmake_ninja_workdir}countfrequency_autogen\include\ui_finalmenu.h ${cmake_ninja_workdir}countfrequency_autogen\include\ui_firstmenu.h ${cmake_ninja_workdir}countfrequency_autogen\include\ui_displaymenu.h: phony countfrequency_autogen\timestamp || countfrequency_autogen_timestamp_deps
+build CMakeFiles\countfrequency_autogen countfrequency_autogen\include\ui_mainwindow.h countfrequency_autogen\include\ui_finalmenu.h countfrequency_autogen\include\ui_firstmenu.h countfrequency_autogen\include\ui_displaymenu.h countfrequency_autogen\include\ui_searchwindow.h countfrequency_autogen\include\ui_autocorrect.h | ${cmake_ninja_workdir}CMakeFiles\countfrequency_autogen ${cmake_ninja_workdir}countfrequency_autogen\include\ui_mainwindow.h ${cmake_ninja_workdir}countfrequency_autogen\include\ui_finalmenu.h ${cmake_ninja_workdir}countfrequency_autogen\include\ui_firstmenu.h ${cmake_ninja_workdir}countfrequency_autogen\include\ui_displaymenu.h ${cmake_ninja_workdir}countfrequency_autogen\include\ui_searchwindow.h ${cmake_ninja_workdir}countfrequency_autogen\include\ui_autocorrect.h: phony countfrequency_autogen\timestamp || countfrequency_autogen_timestamp_deps
 
 # =============================================================================
 # Target aliases.

@@ -294,6 +294,12 @@
 			null
 		],
 		[
+			"C:/Users/georg/OneDrive/Documents/countfrequency/searchwindow.h",
+			"MU",
+			"EWIEGA46WW/moc_searchwindow.cpp",
+			null
+		],
+		[
 			"C:/Users/georg/OneDrive/Documents/countfrequency/wordfrequancy.h",
 			"MU",
 			"EWIEGA46WW/moc_wordfrequancy.cpp",
@@ -377,6 +383,11 @@
 		],
 		[
 			"C:/Users/georg/OneDrive/Documents/countfrequency/mainwindow.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/georg/OneDrive/Documents/countfrequency/searchwindow.cpp",
 			"MU",
 			null
 		],

@@ -1,6 +1,7 @@
 #include "WordFrequancy.h"
 #include "displaymenu.h"
 #include "finalmenu.h"
+#include "autocorrect.h"
 #include <algorithm>
 #include <iostream>
 #include <queue>
@@ -8,54 +9,16 @@
 #include <string>
 #include <unordered_map>
 #include <vector>
+#include <set>
+#include <QFile>
+#include <QTextStream>
 using namespace std;
+string WordFrequancy::globalString ;
+
 WordFrequancy::WordFrequancy(string paragraph)
 {
     this->paragraph = paragraph;
 }
-// void WordFrequancy::workFlow(string paragraph) {
-//     int choice;
-//     while (1) {
-//         cout << "Enter 1 to exit:\nEnter 2 to edit:\nEnter 3 to display frequency sorted from greater to smaller: ";
-//         cin >> choice;
-//         if (choice == 1)
-//             break;
-//         if (choice == 2) {
-//             string wordToEdit, editedWord;
-//             cout << "Word you want to edit: ";
-//             cin >> wordToEdit;
-//             cout << "Edited word: ";
-
-//             cin >> editedWord;
-//             edit(wordToEdit, editedWord, paragraph);
-
-//         }
-//         if (choice == 3) {
-
-//             stack <pair<string, int>> sortedStack;
-//             sortedStack = countFrequencySorted(paragraph);
-
-//             while (!sortedStack.empty()) {
-//                 cout << sortedStack.top().first << " : " << sortedStack.top().second << endl;
-//                 sortedStack.pop();
-//             }
-//         }
-//     }
-
-//     cout << "==============================================================" << endl;
-//     cout << "paragraph : " << paragraph << endl;
-//     cout << "==============================================================" << endl;
-//     unordered_map<string, int > wordWithFrequancy;
-//     wordWithFrequancy = count(paragraph);
-//     unordered_map<string, int >::iterator it = wordWithFrequancy.begin();
-//     while (it != wordWithFrequancy.end()) {
-//         cout << it->first << " : " << it->second << endl;
-//         it++;
-//     }
-//     cout << "==============================================================" << endl;
-
-//     // Printing word frequencies
-// }
 bool sortByFrequencyAndSize(const pair<string, int> a, const pair<string, int> b)
 {
     if (a.second != b.second) {
@@ -68,20 +31,6 @@ bool sortByFrequencyAndSize(const pair<string, int> a, const pair<string, int> b
     return a.first > b.first;
 }
 
-// void WordFrequancy::edit(string wordToEdit, string editedWord, string& paragraph) {
-//     wordToEdit = to_lower(wordToEdit);
-//     editedWord = to_lower(editedWord);
-//     unordered_map<string, int> wordWithFrequancy;
-
-//     size_t pos = paragraph.find(wordToEdit); // Find the position of the original word in the sentence
-//     if (pos != string::npos) { // If the word is found in the sentence
-//         paragraph.replace(pos, wordToEdit.length(), editedWord); // Replace the original word with the edited word
-
-//     }
-//     else {
-//         cout << "Word not found in the sentence.\n";
-//     }
-// }
 
 unordered_map<string, int> WordFrequancy::count(string paragraph)
 {
@@ -154,12 +103,11 @@ string WordFrequancy::displayFrequancy()
     string unorderedString;
 
     unorderedString = "Word\t\t\tFrequancy\n\n";
-    for (auto t = displayMap.begin();t != displayMap.end();t++)
-    {
-        unorderedString += t->first + "\n\t\t\t       " + to_string(t->second) + "\n----------------------------------------------------\n\n";
+    for (auto t = displayMap.begin(); t != displayMap.end(); t++) {
+        unorderedString += t->first + "\n\t\t\t       " + to_string(t->second)
+                           + "\n----------------------------------------------------\n\n";
     }
     return unorderedString;
-
 }
 
 //display sorted word's frequancy
@@ -168,16 +116,69 @@ string WordFrequancy::displaySortedFrequancy()
 {
     stack<pair<string, int>> displaySortedStack = countFrequencySorted(paragraph);
     int size = displaySortedStack.size();
-    pair<string,int> data;
+    pair<string, int> data;
     string sortedString;
 
     sortedString = "    Word\t\t\tFrequancy\n\n";
-    for(int i = 1;i<=size;i++)
-    {
+    for (int i = 1; i <= size; i++) {
         data = displaySortedStack.top();
         displaySortedStack.pop();
 
-        sortedString += "(" + to_string(i) + ")_" + data.first + "\n\t\t\t       " + to_string(data.second) + "\n----------------------------------------------------\n\n";
+        sortedString += "(" + to_string(i) + ")_" + data.first + "\n\t\t\t       "
+                        + to_string(data.second)
+                        + "\n----------------------------------------------------\n\n";
     }
     return sortedString;
+}
+
+//display common words
+
+void WordFrequancy::displayCommonWords()
+{
+    autocorrect readObject;
+    set<string> readText = readObject.load("C:\\Users\alima\\Documents\\countfrequency\\CommonWords.txt");
+    stack<pair<string, int>> SortedStack = countFrequencySorted(paragraph);
+    pair<string, int> data;
+    int size = SortedStack.size();
+    set<string> newWords;
+    bool founded = false;
+
+    for(int i = 0;i < size;i++){
+        data = SortedStack.top();
+        SortedStack.pop();
+
+        if(data.second < 15){
+            break;
+        }
+
+        else if(data.second >= 15){
+            if(!readText.empty()){
+
+                for(auto it = readText.begin();it != readText.end();it++){
+
+                    if(data.first == it->data()){
+                    founded = true;
+                    break;
+                    }
+                }
+            }
+            if(!founded){
+                newWords.insert(data.first);
+            }
+        }
+        founded = false;
+    }
+
+    QFile file("C:\\Users\alima\\Documents\\countfrequency\\CommonWords.txt");
+    if (!file.open(QIODevice::Append | QIODevice::Text)) {
+        qDebug() << "Failed to open file for writing.";
+    }
+
+    QTextStream writingFile(&file);
+    for(auto it = newWords.begin();it != newWords.end();it++){
+        writingFile<<it->data()<<" ";
+    }
+
+    file.close();
+
 }

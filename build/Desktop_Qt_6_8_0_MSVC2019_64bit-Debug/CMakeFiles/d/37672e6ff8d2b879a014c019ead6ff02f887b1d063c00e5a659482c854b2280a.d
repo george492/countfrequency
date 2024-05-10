@@ -1,4 +1,5 @@
 countfrequency_autogen/timestamp: \
+  C:/Qt/6.8.0/msvc2019_64/include/QtCore/QFile \
   C:/Qt/6.8.0/msvc2019_64/include/QtCore/QString \
   C:/Qt/6.8.0/msvc2019_64/include/QtCore/q20functional.h \
   C:/Qt/6.8.0/msvc2019_64/include/QtCore/q20memory.h \
@@ -18,6 +19,7 @@ countfrequency_autogen/timestamp: \
   C:/Qt/6.8.0/msvc2019_64/include/QtCore/qbytearrayalgorithms.h \
   C:/Qt/6.8.0/msvc2019_64/include/QtCore/qbytearraylist.h \
   C:/Qt/6.8.0/msvc2019_64/include/QtCore/qbytearrayview.h \
+  C:/Qt/6.8.0/msvc2019_64/include/QtCore/qcalendar.h \
   C:/Qt/6.8.0/msvc2019_64/include/QtCore/qchar.h \
   C:/Qt/6.8.0/msvc2019_64/include/QtCore/qcompare.h \
   C:/Qt/6.8.0/msvc2019_64/include/QtCore/qcompare_impl.h \
@@ -31,9 +33,14 @@ countfrequency_autogen/timestamp: \
   C:/Qt/6.8.0/msvc2019_64/include/QtCore/qcontiguouscache.h \
   C:/Qt/6.8.0/msvc2019_64/include/QtCore/qdarwinhelpers.h \
   C:/Qt/6.8.0/msvc2019_64/include/QtCore/qdatastream.h \
+  C:/Qt/6.8.0/msvc2019_64/include/QtCore/qdatetime.h \
   C:/Qt/6.8.0/msvc2019_64/include/QtCore/qdebug.h \
+  C:/Qt/6.8.0/msvc2019_64/include/QtCore/qdir.h \
   C:/Qt/6.8.0/msvc2019_64/include/QtCore/qendian.h \
   C:/Qt/6.8.0/msvc2019_64/include/QtCore/qexceptionhandling.h \
+  C:/Qt/6.8.0/msvc2019_64/include/QtCore/qfile.h \
+  C:/Qt/6.8.0/msvc2019_64/include/QtCore/qfiledevice.h \
+  C:/Qt/6.8.0/msvc2019_64/include/QtCore/qfileinfo.h \
   C:/Qt/6.8.0/msvc2019_64/include/QtCore/qflags.h \
   C:/Qt/6.8.0/msvc2019_64/include/QtCore/qfloat16.h \
   C:/Qt/6.8.0/msvc2019_64/include/QtCore/qforeach.h \
@@ -44,12 +51,14 @@ countfrequency_autogen/timestamp: \
   C:/Qt/6.8.0/msvc2019_64/include/QtCore/qglobalstatic.h \
   C:/Qt/6.8.0/msvc2019_64/include/QtCore/qhash.h \
   C:/Qt/6.8.0/msvc2019_64/include/QtCore/qhashfunctions.h \
+  C:/Qt/6.8.0/msvc2019_64/include/QtCore/qiodevice.h \
   C:/Qt/6.8.0/msvc2019_64/include/QtCore/qiodevicebase.h \
   C:/Qt/6.8.0/msvc2019_64/include/QtCore/qiterable.h \
   C:/Qt/6.8.0/msvc2019_64/include/QtCore/qiterator.h \
   C:/Qt/6.8.0/msvc2019_64/include/QtCore/qlatin1stringview.h \
   C:/Qt/6.8.0/msvc2019_64/include/QtCore/qline.h \
   C:/Qt/6.8.0/msvc2019_64/include/QtCore/qlist.h \
+  C:/Qt/6.8.0/msvc2019_64/include/QtCore/qlocale.h \
   C:/Qt/6.8.0/msvc2019_64/include/QtCore/qlogging.h \
   C:/Qt/6.8.0/msvc2019_64/include/QtCore/qmalloc.h \
   C:/Qt/6.8.0/msvc2019_64/include/QtCore/qmap.h \
@@ -101,6 +110,7 @@ countfrequency_autogen/timestamp: \
   C:/Qt/6.8.0/msvc2019_64/include/QtCore/qtdeprecationmarkers.h \
   C:/Qt/6.8.0/msvc2019_64/include/QtCore/qtenvironmentvariables.h \
   C:/Qt/6.8.0/msvc2019_64/include/QtCore/qtextstream.h \
+  C:/Qt/6.8.0/msvc2019_64/include/QtCore/qtimezone.h \
   C:/Qt/6.8.0/msvc2019_64/include/QtCore/qtmetamacros.h \
   C:/Qt/6.8.0/msvc2019_64/include/QtCore/qtnoop.h \
   C:/Qt/6.8.0/msvc2019_64/include/QtCore/qtpreprocessorsupport.h \
@@ -111,6 +121,7 @@ countfrequency_autogen/timestamp: \
   C:/Qt/6.8.0/msvc2019_64/include/QtCore/qtversionchecks.h \
   C:/Qt/6.8.0/msvc2019_64/include/QtCore/qtypeinfo.h \
   C:/Qt/6.8.0/msvc2019_64/include/QtCore/qtypes.h \
+  C:/Qt/6.8.0/msvc2019_64/include/QtCore/qurl.h \
   C:/Qt/6.8.0/msvc2019_64/include/QtCore/qutf8stringview.h \
   C:/Qt/6.8.0/msvc2019_64/include/QtCore/qvariant.h \
   C:/Qt/6.8.0/msvc2019_64/include/QtCore/qvarlengtharray.h \
@@ -143,8 +154,14 @@ countfrequency_autogen/timestamp: \
   C:/Qt/6.8.0/msvc2019_64/include/QtGui/qtransform.h \
   C:/Qt/6.8.0/msvc2019_64/include/QtGui/qwindowdefs.h \
   C:/Qt/6.8.0/msvc2019_64/include/QtGui/qwindowdefs_win.h \
+  C:/Qt/6.8.0/msvc2019_64/include/QtWidgets/QFileDialog \
   C:/Qt/6.8.0/msvc2019_64/include/QtWidgets/QMainWindow \
+  C:/Qt/6.8.0/msvc2019_64/include/QtWidgets/QMessageBox \
+  C:/Qt/6.8.0/msvc2019_64/include/QtWidgets/qdialog.h \
+  C:/Qt/6.8.0/msvc2019_64/include/QtWidgets/qdialogbuttonbox.h \
+  C:/Qt/6.8.0/msvc2019_64/include/QtWidgets/qfiledialog.h \
   C:/Qt/6.8.0/msvc2019_64/include/QtWidgets/qmainwindow.h \
+  C:/Qt/6.8.0/msvc2019_64/include/QtWidgets/qmessagebox.h \
   C:/Qt/6.8.0/msvc2019_64/include/QtWidgets/qsizepolicy.h \
   C:/Qt/6.8.0/msvc2019_64/include/QtWidgets/qtabwidget.h \
   C:/Qt/6.8.0/msvc2019_64/include/QtWidgets/qtwidgets-config.h \
@@ -335,6 +352,9 @@ countfrequency_autogen/timestamp: \
   C:/Qt/Tools/CMake_64/share/cmake-3.27/Modules/Platform/Windows.cmake \
   C:/Qt/Tools/CMake_64/share/cmake-3.27/Modules/Platform/WindowsPaths.cmake \
   C:/Users/alima/Documents/countfrequency/CMakeLists.txt \
+  C:/Users/alima/Documents/countfrequency/autocorrect.cpp \
+  C:/Users/alima/Documents/countfrequency/autocorrect.h \
+  C:/Users/alima/Documents/countfrequency/autocorrect.ui \
   .qtc/package-manager/auto-setup.cmake \
   CMakeFiles/3.27.7/CMakeCXXCompiler.cmake \
   CMakeFiles/3.27.7/CMakeRCCompiler.cmake \
@@ -352,5 +372,8 @@ countfrequency_autogen/timestamp: \
   C:/Users/alima/Documents/countfrequency/mainwindow.cpp \
   C:/Users/alima/Documents/countfrequency/mainwindow.h \
   C:/Users/alima/Documents/countfrequency/mainwindow.ui \
+  C:/Users/alima/Documents/countfrequency/searchwindow.cpp \
+  C:/Users/alima/Documents/countfrequency/searchwindow.h \
+  C:/Users/alima/Documents/countfrequency/searchwindow.ui \
   C:/Users/alima/Documents/countfrequency/wordfrequancy.cpp \
   C:/Users/alima/Documents/countfrequency/wordfrequancy.h
