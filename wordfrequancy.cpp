@@ -1,7 +1,6 @@
 #include "WordFrequancy.h"
 #include "displaymenu.h"
 #include "finalmenu.h"
-#include "autocorrect.h"
 #include <algorithm>
 #include <iostream>
 #include <queue>
@@ -39,8 +38,8 @@ unordered_map<string, int> WordFrequancy::count(string paragraph)
     string singleWord;
     unordered_map<string, int> wordWithFrequancy;
     for (int i = 0; i < paragraph.size(); i++) {
-        if (paragraph[i] == ' ' || paragraph[i] == ',') {
-            while (paragraph[i] == ' ' || paragraph[i] == ',')
+        if (paragraph[i] == ' ' || paragraph[i] == ','|| paragraph[i] == '\n'|| paragraph[i] == '.') {
+            while (paragraph[i] == ' ' || paragraph[i] == ','|| paragraph[i] == '\n'|| paragraph[i] == '.')
                 i++;
             singleWord = to_lower(singleWord);
 

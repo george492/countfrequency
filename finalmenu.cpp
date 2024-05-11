@@ -4,7 +4,6 @@
 #include "ui_finalmenu.h"
 #include "wordfrequancy.h"
 #include "searchwindow.h"
-#include "autocorrect.h"
 #include "correcting.h"
 #include "datamanager.h"
 
@@ -26,7 +25,8 @@ finalmenu::finalmenu(QWidget *parent)
 }
 finalmenu::~finalmenu()
 {
-    WordFrequancy::storeHistoryFromFile("C:/Users/georg/Downloads/TestHistory.txt");
+   // WordFrequancy::clearFile("C:/Users/georg/Downloads/c.txt");
+   // WordFrequancy::storeHistoryFromFile("C:/Users/georg/Downloads/TestHistory.txt");
     delete ui;
 
 }
@@ -85,8 +85,8 @@ void finalmenu::openHistoryDisplaymenu()
 
         display += "{ " + history->first + " }\n\t\t\t          " + to_string(history->second) + "\n----------------------------------------------------\n\n";
     }
-
-    WordFrequancy::storeHistoryFromFile("C:/Users/georg/Downloads/TestHistory.txt");
+    WordFrequancy::clearFile("C:/Users/georg/Downloads/c.txt");
+    WordFrequancy::storeHistoryFromFile("C:/Users/georg/Downloads/c.txt");
     displayMenu->printText(display);
     displayMenu->show();
 }

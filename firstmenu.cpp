@@ -44,6 +44,7 @@ void firstmenu::on_loadButton_clicked()
             // globalstring=in.readAll();
             // ui->textInput->setPlainText(fileContent);
             DataManager::instance().setString( fileContent);
+            t->updatetext();
             file.close();
             this->hide();
             t->show();
